@@ -4,7 +4,7 @@ export default function ArtPieceDetails({ piece }) {
 
   return (
     <article>
-      <Image src={imageSource} />
+      <Image src={imageSource} alt="meow" />
       <h1>{name}</h1>
       <ul>
         <li>{artist}</li>
