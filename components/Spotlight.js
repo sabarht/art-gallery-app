@@ -6,6 +6,9 @@ export default function Spotlight({ pieces }) {
   };
 
   const randomArtPiece = getRandomArtPiece();
+  if (!randomArtPiece) {
+    return null;
+  }
   return (
     <div>
       <h2>Spotlight </h2>

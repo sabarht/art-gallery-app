@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function ArtCard({ data }) {
   const { imageSource, dimensions, name, artist } = data;
-
   return (
     <div className="card">
       <Image
