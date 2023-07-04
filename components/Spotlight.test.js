@@ -17,20 +17,6 @@ const mockArtPieces = [
       type: "jpg",
     },
   },
-  {
-    slug: "blue-and-red",
-    artist: "Jung-Hua Lui",
-    name: "Blue and Red",
-    imageSource: "https://example-apis.vercel.app/assets/art/blue-and-red.jpg",
-    year: "2019",
-    genre: "Abstract Painting",
-    colors: ["#3f9eab", "#dfa597", "#323f6a", "#88d9ce", "#5a614c"],
-    dimensions: {
-      height: 2560,
-      width: 1920,
-      type: "jpg",
-    },
-  },
 ];
 
 test("renders artist name and image", async () => {
