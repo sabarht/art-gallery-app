@@ -1,6 +1,7 @@
 import Image from "next/image";
+import FavoriteButton from "./FavoriteButton";
 
-export default function ArtCard({ data }) {
+export default function ArtCard({ data, onToggleFavorite }) {
   const { imageSource, dimensions, name, artist } = data;
   return (
     <div className="card">
@@ -11,6 +12,7 @@ export default function ArtCard({ data }) {
         alt={`Name: ${name}, Artist: ${artist}`}
       />
       <p>{`"${name}" by ${artist}`}</p>
+      <FavoriteButton />
     </div>
   );
 }
