@@ -1,6 +1,5 @@
 import Link from "next/link";
 import ArtCard from "../../components/ArtCard";
-import ArtPieceDetails from "./[slug]";
 
 export default function ArtPieces({ data }) {
   return (
@@ -9,7 +8,6 @@ export default function ArtPieces({ data }) {
 
       <ul>
         {data.map((piece) => (
-          //1
           <li key={piece.slug}>
             <Link href={`/art_pieces/${piece.slug}`}>
               <ArtCard data={piece} />
