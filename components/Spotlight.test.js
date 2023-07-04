@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import ArtPieces from "./index";
+import { render, screen, waitFor } from "@testing-library/react";
+import Spotlight from "./Spotlight.js";
 
 const mockArtPieces = [
   {
@@ -33,26 +33,16 @@ const mockArtPieces = [
   },
 ];
 
-test("displays all art pieces as a list", () => {
-  render(<ArtPieces data={mockArtPieces} />);
+test("renders artist name and image", async () => {
+  render(<Spotlight pieces={mockArtPieces} />);
 
-  const artPieceElements = screen.getAllByRole("listitem");
-
-  expect(artPieceElements.length).toBe(mockArtPieces.length);
-});
-
-test("displays each art piece's image, title, and artist", () => {
-  render(<ArtPieces data={mockArtPieces} />);
-
-  mockArtPieces.forEach((artPiece) => {
-    const imageElement = screen.getByAltText(
-      `Name: ${artPiece.name}, Artist: ${artPiece.artist}`
+  await waitFor(() => {
+    const artistElement = screen.getByText(
+      `Artist: ${mockArtPieces[0].artist}`
     );
-    const titleElement = screen.getByText(
-      `"${artPiece.name}" by ${artPiece.artist}`
-    );
+    const imageElement = screen.getByAltText(`${mockArtPieces[0].name}`);
 
+    expect(artistElement).toBeInTheDocument();
     expect(imageElement).toBeInTheDocument();
-    expect(titleElement).toBeInTheDocument();
   });
 });
