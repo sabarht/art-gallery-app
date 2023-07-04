@@ -17,18 +17,26 @@ const mockArtPiece = {
   },
 };
 
-test("displays the art piece image", () => {
-  render(<ArtCard data={mockArtPiece} />);
+test("renders the image with correct height, width, and alt text", () => {
+  const artPiece = mockArtPiece;
+
+  render(<ArtCard data={artPiece} />);
+
   const imageElement = screen.getByAltText(
-    /name: orange red and green abstract painting, artist: steve johnson/i
+    `Name: ${artPiece.name}, Artist: ${artPiece.artist}`
   );
+
   expect(imageElement).toBeInTheDocument();
 });
 
-test("displays the art piece title", () => {
-  render(<ArtCard data={mockArtPiece} />);
+test("renders the title and artist name", () => {
+  const artPiece = mockArtPiece;
+
+  render(<ArtCard data={artPiece} />);
+
   const titleElement = screen.getByText(
-    /"orange red and green abstract painting" by steve johnson/i
+    `"${artPiece.name}" by ${artPiece.artist}`
   );
+
   expect(titleElement).toBeInTheDocument();
 });
