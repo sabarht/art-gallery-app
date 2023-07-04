@@ -12,6 +12,8 @@ export default function ArtCard({ data }) {
         alt={`Name: ${name}, Artist: ${artist}`}
       />
       <p>{`"${name}" by ${artist}`}</p>
+      <button>FAV</button>
+      {/* <button onClick={handleToggle}>FAV</button> */}
     </div>
   );
 }
