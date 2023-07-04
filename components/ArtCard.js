@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ArtCard({ data }) {
   const { imageSource, dimensions, name, artist } = data;
-  console.log(data);
+
   return (
     <div className="card">
       <Image
@@ -12,8 +12,6 @@ export default function ArtCard({ data }) {
         alt={`Name: ${name}, Artist: ${artist}`}
       />
       <p>{`"${name}" by ${artist}`}</p>
-      <button>FAV</button>
-      {/* <button onClick={handleToggle}>FAV</button> */}
     </div>
   );
 }
