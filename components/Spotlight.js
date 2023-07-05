@@ -1,8 +1,14 @@
 import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
-export default function Spotlight({ pieces, updateArtPieceInfo }) {
+export default function Spotlight({
+  pieces,
+  artPiecesInfo,
+  handleToggleFavorite,
+}) {
   const getRandomArtPiece = () => {
-    const randomIndex = Math.floor(Math.random() * pieces.length);
+    console.log("Pieces:", pieces);
+    console.log("Pieces length:", pieces.length);
+    const randomIndex = Math.floor(Math.random() * pieces.length - 1);
     return pieces[randomIndex];
   };
 
@@ -12,7 +18,7 @@ export default function Spotlight({ pieces, updateArtPieceInfo }) {
   }
   return (
     <div>
-      <h2>Spotlight </h2>
+      <h1>Spotlight </h1>
       <p>Artist: {randomArtPiece.artist}</p>
       <Image
         src={randomArtPiece.imageSource}
@@ -20,7 +26,11 @@ export default function Spotlight({ pieces, updateArtPieceInfo }) {
         width={randomArtPiece.dimensions.width / 5}
         alt={randomArtPiece.name}
       />
-      <FavoriteButton updateArtPieceInfo={updateArtPieceInfo} />
+      <FavoriteButton
+        pieces={pieces}
+        artPiecesInfo={artPiecesInfo}
+        handleToggleFavorite={handleToggleFavorite}
+      />
     </div>
   );
 }

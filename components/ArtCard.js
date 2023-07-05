@@ -1,8 +1,14 @@
 import Image from "next/image";
-import FavoriteButton from "./FavoriteButton";
+import FavoriteButton from "./FavoriteButton.js";
+import Link from "next/link.js";
 
-export default function ArtCard({ data, onToggleFavorite }) {
-  const { imageSource, dimensions, name, artist } = data;
+export default function ArtCard({ pieces }) {
+  const { imageSource, dimensions, name, artist, slug, favorite } = pieces;
+
+  // function handleToggleFavorite() {
+  //   updateArtPieceInfo(slug, { favorite: !favorite });
+  // }
+
   return (
     <div className="card">
       <Image
@@ -12,7 +18,6 @@ export default function ArtCard({ data, onToggleFavorite }) {
         alt={`Name: ${name}, Artist: ${artist}`}
       />
       <p>{`"${name}" by ${artist}`}</p>
-      <FavoriteButton />
     </div>
   );
 }

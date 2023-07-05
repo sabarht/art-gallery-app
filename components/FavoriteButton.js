@@ -1,10 +1,21 @@
-import { ReactComponent as Heart } from "../assets/heart.svg";
-export default function FavoriteButton({ isFavorite, updateArtPieceInfo }) {
-  const slug = "orange-red-and-green";
-  console.log(updateArtPieceInfo);
-  function handleToggleFavorite() {
-    updateArtPieceInfo(slug, { favorite: true });
-  }
-  return <button onClick={handleToggleFavorite}>fav</button>;
-  //   return <Heart onClick={handleToggleFavorite} />;
+// export default function FavoriteButton({ pieces, artPiecesInfo, handleToggleFavorite }) {
+//   return (
+//     <button onClick={() => handleToggleFavorite(pieces.slug)}>{isFavorite ? "🥱" : "🖤"}</button>
+//   );
+// }
+
+export default function FavoriteButton({
+  handleToggleFavorite,
+  pieces,
+  artPiecesInfo,
+}) {
+  return (
+    <>
+      {artPiecesInfo.includes(pieces.slug) ? (
+        <button onClick={() => handleToggleFavorite(pieces.slug)}>❤</button>
+      ) : (
+        <button onClick={() => handleToggleFavorite(pieces.slug)}>🖤</button>
+      )}
+    </>
+  );
 }

@@ -23,10 +23,8 @@ test("renders artist name and image", async () => {
   render(<Spotlight pieces={mockArtPieces} />);
 
   await waitFor(() => {
-    const artistElement = screen.getByText(
-      `Artist: ${mockArtPieces[0].artist}`
-    );
-    const imageElement = screen.getByAltText(`${mockArtPieces[0].name}`);
+    const artistElement = screen.getByText(`Artist: ${mockArtPieces.artist}`);
+    const imageElement = screen.getByAltText(`${mockArtPieces.name}`);
 
     expect(artistElement).toBeInTheDocument();
     expect(imageElement).toBeInTheDocument();
