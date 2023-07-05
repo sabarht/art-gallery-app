@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "./FavoriteButton";
 
 export default function ArtPieceDetails({ pieces }) {
   const { dimensions, imageSource, name, artist, year, genre } = pieces;

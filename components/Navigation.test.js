@@ -12,3 +12,9 @@ test("displays a navigation link labeled 'Pieces'", () => {
   const piecesLink = screen.getByRole("link", { name: /pieces/i });
   expect(piecesLink).toBeInTheDocument();
 });
+
+test("displays a navigation link labeled 'Favorites'", () => {
+  render(<Navigation />);
+  const piecesLink = screen.getByRole("link", { name: /favorites/i });
+  expect(piecesLink).toBeInTheDocument();
+});

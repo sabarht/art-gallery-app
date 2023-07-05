@@ -34,7 +34,7 @@ const mockArtPieces = [
 ];
 
 test("displays all art pieces as a list", () => {
-  render(<ArtPieces data={mockArtPieces} />);
+  render(<ArtPieces pieces={mockArtPieces} artPiecesInfo={[]} />);
 
   const artPieceElements = screen.getAllByRole("listitem");
 
@@ -42,7 +42,7 @@ test("displays all art pieces as a list", () => {
 });
 
 test("displays each art piece's image, title, and artist", () => {
-  render(<ArtPieces data={mockArtPieces} />);
+  render(<ArtPieces pieces={mockArtPieces} artPiecesInfo={[]} />);
 
   mockArtPieces.forEach((artPiece) => {
     const imageElement = screen.getByAltText(
