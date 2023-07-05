@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Comments from "./Comments";
-import CommentForm from "./commentForm";
+import CommentForm from "./CommentForm";
 
 export default function ArtPieceDetails({ pieces }) {
-  const { dimensions, imageSource, title, name, artist, year, genre } = pieces;
-
+  const { dimensions, imageSource, slug, name, artist, year, genre } = pieces;
+  console.log(pieces);
   return (
     <article>
       <h1>Art piece details</h1>
@@ -21,8 +21,12 @@ export default function ArtPieceDetails({ pieces }) {
         <p>{year}</p>
         <p>{genre}</p>
       </div>
-      <Comments title={title} />
-      <CommentForm title={title} />
+      {/* {pieces.map((piece) => ( */}
+      <div key={slug}>
+        <Comments slug={slug} />
+        <CommentForm slug={slug} />
+      </div>
+      {/* ))} */}
       <Link href="/art_pieces">Go back to all pieces</Link>
     </article>
   );

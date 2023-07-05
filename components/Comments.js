@@ -1,17 +1,19 @@
-import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
+import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState";
 
-export default function Comments({ title }) {
+export default function Comments({ slug }) {
   const [artPiecesComments, updateArtPiecesComments] =
     useImmerLocalStorageState("art-pieces-comments", {
       defaultValue: {},
     });
-
+  console.log(artPiecesComments);
   return (
     <ul>
-      {(artPiecesComments[title] || []).map((comment, index) => {
+      {(artPiecesComments[slug] || []).map((commentObj, index) => {
+        const { comment, time } = commentObj;
         return (
           <li className="commentList" key={index}>
-            {comment}
+            <p>{comment}</p>
+            <p>{time}</p>
           </li>
         );
       })}
