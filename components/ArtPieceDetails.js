@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ArtPieceDetails({ data }) {
-  const { dimensions, imageSource, name, artist, year, genre } = data;
+export default function ArtPieceDetails({ pieces }) {
+  const { dimensions, imageSource, name, artist, year, genre } = pieces;
+
   return (
     <article>
       <Image
