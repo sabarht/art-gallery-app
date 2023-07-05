@@ -20,7 +20,7 @@ const mockArtPiece = {
 test("renders the image with correct height, width, and alt text", () => {
   const artPiece = mockArtPiece;
 
-  render(<ArtCard pieces={artPiece} />);
+  render(<ArtCard pieces={artPiece} artPiecesInfo={[]} />);
 
   const imageElement = screen.getByAltText(
     `Name: ${artPiece.name}, Artist: ${artPiece.artist}`
@@ -32,7 +32,7 @@ test("renders the image with correct height, width, and alt text", () => {
 test("renders the title and artist name", () => {
   const artPiece = mockArtPiece;
 
-  render(<ArtCard pieces={artPiece} />);
+  render(<ArtCard pieces={artPiece} artPiecesInfo={[]} />);
 
   const titleElement = screen.getByText(
     `"${artPiece.name}" by ${artPiece.artist}`

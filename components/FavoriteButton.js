@@ -6,9 +6,23 @@ export default function FavoriteButton({
   return (
     <>
       {artPiecesInfo.includes(pieces.slug) ? (
-        <button onClick={() => handleToggleFavorite(pieces.slug)}>💖</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleToggleFavorite(pieces.slug);
+          }}
+        >
+          💖
+        </button>
       ) : (
-        <button onClick={() => handleToggleFavorite(pieces.slug)}>🖤</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleToggleFavorite(pieces.slug);
+          }}
+        >
+          🖤
+        </button>
       )}
     </>
   );
