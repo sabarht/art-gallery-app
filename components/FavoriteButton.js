@@ -1,9 +1,3 @@
-// export default function FavoriteButton({ pieces, artPiecesInfo, handleToggleFavorite }) {
-//   return (
-//     <button onClick={() => handleToggleFavorite(pieces.slug)}>{isFavorite ? "🥱" : "🖤"}</button>
-//   );
-// }
-
 export default function FavoriteButton({
   handleToggleFavorite,
   pieces,
