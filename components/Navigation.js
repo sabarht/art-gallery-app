@@ -11,7 +11,7 @@ export default function Navigation() {
   );
 }
 const StyledNavigation = styled.nav`
-  position: sticky;
+  position: fixed;
   bottom: 0;
   display: flex;
   text-align: center;
@@ -29,7 +29,7 @@ const StyledNavigation = styled.nav`
     width: 100%;
     &:hover {
       color: white;
-      background-color: gold;
+      background-color: violet;
     }
   }
 `;

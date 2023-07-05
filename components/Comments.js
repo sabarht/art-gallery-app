@@ -1,4 +1,5 @@
 import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState";
+import styled from "styled-components";
 
 export default function Comments({ slug }) {
   const [artPiecesComments, updateArtPiecesComments] =
@@ -7,16 +8,31 @@ export default function Comments({ slug }) {
     });
   console.log(artPiecesComments);
   return (
-    <ul>
+    <StyledUl>
+      <h4>Comments:</h4>
       {(artPiecesComments[slug] || []).map((commentObj, index) => {
         const { comment, time } = commentObj;
         return (
           <li className="commentList" key={index}>
-            <p>{comment}</p>
-            <p>{time}</p>
+            <span>&quot;{comment}&quot;</span>
+            <span className="time">{time}</span>
           </li>
         );
       })}
-    </ul>
+    </StyledUl>
   );
 }
+
+const StyledUl = styled.ul`
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4pxpx;
+  }
+
+  .time {
+    color: gray;
+  }
+`;

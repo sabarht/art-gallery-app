@@ -1,4 +1,5 @@
 import ArtCard from "./ArtCard";
+import styled from "styled-components";
 
 export default function Spotlight({
   pieces,
@@ -12,13 +13,21 @@ export default function Spotlight({
 
   const randomArtPiece = getRandomArtPiece();
   return (
-    <div>
+    <StyledADiv>
       <h1>Spotlight </h1>
       <ArtCard
         pieces={randomArtPiece}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
-    </div>
+    </StyledADiv>
   );
 }
+
+const StyledADiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+`;

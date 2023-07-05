@@ -1,4 +1,5 @@
 import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState";
+import styled from "styled-components";
 
 export default function CommentForm({ slug }) {
   function getTime() {
@@ -35,12 +36,23 @@ export default function CommentForm({ slug }) {
     event.target.reset();
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit}>
       <div>
         <label htmlFor="comment">Your comment: </label>
-        <textarea id="comment" name="comment" rows="5" cols="33"></textarea>
+        <textarea id="comment" name="comment" rows="4" cols="40"></textarea>
       </div>
       <button type="submit">Send</button>
-    </form>
+    </StyledForm>
   );
 }
+
+const StyledForm = styled.form`
+  label {
+    display: block;
+  }
+  button {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 2.2rem;
+  }
+`;
