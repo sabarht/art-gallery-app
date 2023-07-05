@@ -6,6 +6,7 @@ export default function ArtPieceDetails({ pieces }) {
 
   return (
     <article>
+      <h1>Art piece details</h1>
       <Image
         src={imageSource}
         height={dimensions.height / 5}

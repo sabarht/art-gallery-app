@@ -1,5 +1,4 @@
-import Image from "next/image";
-import FavoriteButton from "./FavoriteButton";
+import ArtCard from "./ArtCard";
 export default function Spotlight({
   pieces,
   artPiecesInfo,
@@ -19,17 +18,10 @@ export default function Spotlight({
   return (
     <div>
       <h1>Spotlight </h1>
-      <p>Artist: {randomArtPiece.artist}</p>
-      <Image
-        src={randomArtPiece.imageSource}
-        height={randomArtPiece.dimensions.height / 5}
-        width={randomArtPiece.dimensions.width / 5}
-        alt={randomArtPiece.name}
-      />
-      <FavoriteButton
-        pieces={pieces}
-        artPiecesInfo={artPiecesInfo}
+      <ArtCard
+        pieces={randomArtPiece}
         handleToggleFavorite={handleToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
       />
     </div>
   );
