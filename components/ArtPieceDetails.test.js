@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ArtPieceDetails from "./ArtPieceDetails.js";
 
 const mockArtPieces = {
@@ -18,31 +18,31 @@ const mockArtPieces = {
 };
 
 test("displays the art piece image", () => {
-  render(<ArtPieceDetails pieces={mockArtPieces} />);
+  render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
   const image = screen.getByAltText(`${mockArtPieces.name}`);
   expect(image).toBeInTheDocument();
 });
 
 test("displays the art piece title", () => {
-  render(<ArtPieceDetails pieces={mockArtPieces} />);
+  render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
   const title = screen.getByText(`${mockArtPieces.name}`);
   expect(title).toBeInTheDocument();
 });
 
 test("displays the art piece artist", () => {
-  render(<ArtPieceDetails pieces={mockArtPieces} />);
+  render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
   const artist = screen.getByText(`${mockArtPieces.artist}`);
   expect(artist).toBeInTheDocument();
 });
 
 test("displays the art piece year", () => {
-  render(<ArtPieceDetails pieces={mockArtPieces} />);
+  render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
   const year = screen.getByText(`${mockArtPieces.year}`);
   expect(year).toBeInTheDocument();
 });
 
 test("displays the art piece genre", () => {
-  render(<ArtPieceDetails pieces={mockArtPieces} />);
+  render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
   const genre = screen.getByText(`${mockArtPieces.genre}`);
   expect(genre).toBeInTheDocument();
 });
