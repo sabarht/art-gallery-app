@@ -46,3 +46,26 @@ test("displays the art piece genre", () => {
   const genre = screen.getByText(`${mockArtPieces.genre}`);
   expect(genre).toBeInTheDocument();
 });
+
+test("renders FavoriteButton component", () => {
+  const pieces = {
+    imageSource: "/path/to/image.jpg",
+    dimensions: { height: 500, width: 500 },
+    name: "Art Piece Name",
+    artist: "Artist Name",
+    slug: "art-piece-slug",
+  };
+  const handleToggleFavorite = jest.fn();
+  const artPiecesInfo = ["art-piece-slug"];
+
+  const { getByTestId } = render(
+    <ArtPieceDetails
+      pieces={pieces}
+      handleToggleFavorite={handleToggleFavorite}
+      artPiecesInfo={artPiecesInfo}
+    />
+  );
+
+  const favoriteButton = getByTestId("favorite-button");
+  expect(favoriteButton).toBeInTheDocument();
+});

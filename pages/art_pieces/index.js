@@ -9,7 +9,7 @@ export default function ArtPieces({
     <>
       <h1>Art pieces</h1>
 
-      <ul>
+      <ul style={{ listStyle: "none" }}>
         {pieces.map((piece) => (
           <li key={piece.slug}>
             <ArtCard

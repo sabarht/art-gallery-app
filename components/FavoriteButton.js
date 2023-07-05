@@ -7,6 +7,7 @@ export default function FavoriteButton({
     <>
       {artPiecesInfo.includes(pieces.slug) ? (
         <button
+          data-testid="favorite-button"
           onClick={(e) => {
             e.preventDefault();
             handleToggleFavorite(pieces.slug);
@@ -16,6 +17,7 @@ export default function FavoriteButton({
         </button>
       ) : (
         <button
+          data-testid="favorite-button"
           onClick={(e) => {
             e.preventDefault();
             handleToggleFavorite(pieces.slug);
