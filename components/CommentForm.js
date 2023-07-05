@@ -36,7 +36,7 @@ export default function CommentForm({ slug }) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div data-testid="comment-container">
         <label htmlFor="comment">Your comment: </label>
         <textarea id="comment" name="comment" rows="5" cols="33"></textarea>
       </div>

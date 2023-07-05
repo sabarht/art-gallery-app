@@ -8,17 +8,19 @@ export default function FavoritePage({
   return (
     <>
       <h1>Favorite Art Pieces</h1>
-      <ul>
+      <ul style={{ listStyle: "none" }}>
         {pieces.map((piece) => {
           return (
-            artPiecesInfo.includes(piece.slug) && (
-              <ArtCard
-                key={piece.slug}
-                pieces={piece}
-                handleToggleFavorite={handleToggleFavorite}
-                artPiecesInfo={artPiecesInfo}
-              />
-            )
+            <li key={piece.slug}>
+              {artPiecesInfo.includes(piece.slug) && (
+                <ArtCard
+                  key={piece.slug}
+                  pieces={piece}
+                  handleToggleFavorite={handleToggleFavorite}
+                  artPiecesInfo={artPiecesInfo}
+                />
+              )}
+            </li>
           );
         })}
       </ul>
