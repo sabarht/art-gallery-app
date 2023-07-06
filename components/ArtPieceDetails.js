@@ -10,7 +10,8 @@ export default function ArtPieceDetails({
   handleToggleFavorite,
   artPiecesInfo,
 }) {
-  const { dimensions, imageSource, name, artist, year, genre, slug } = pieces;
+  const { dimensions, imageSource, name, artist, year, colors, genre, slug } =
+    pieces;
 
   return (
     <>
@@ -49,7 +50,5 @@ export default function ArtPieceDetails({
 const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: space-around;
   align-items: center;
 `;

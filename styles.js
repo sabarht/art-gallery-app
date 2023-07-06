@@ -12,6 +12,10 @@ export default createGlobalStyle`
     margin: 0;
     font-family: system-ui;
     padding-bottom:36px ;
+    background-color: #F0F4F7;
+  }
+  a {
+
   }
   h1{
     text-align: center;
