@@ -10,7 +10,7 @@ export default function ArtCard({
   const { imageSource, dimensions, name, artist, slug } = pieces;
 
   return (
-    <div className="card">
+    <div>
       <Link href={`/art_pieces/${slug}`}>
         <Image
           src={imageSource}
@@ -18,7 +18,8 @@ export default function ArtCard({
           width={dimensions.width / 5}
           alt={`Name: ${name}, Artist: ${artist}`}
         />
-        <p>{`"${name}" by ${artist}`}</p>
+        <h3>{name} </h3>
+        <p>{`by ${artist}`}</p>
       </Link>
       <FavoriteButton
         pieces={pieces}

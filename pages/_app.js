@@ -22,6 +22,14 @@ export default function App({ Component, pageProps }) {
     }
   );
 
+  if (error) {
+    return <div>Error loading...</div>;
+  }
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   function handleToggleFavorite(slug) {
     if (artPiecesInfo.includes(slug)) {
       updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
@@ -32,15 +40,6 @@ export default function App({ Component, pageProps }) {
     }
     console.log("isFavorite", isFavorite);
   }
-
-  if (error) {
-    return <div>Error loading...</div>;
-  }
-
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <>
       <GlobalStyle />

@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export default function FavoriteButton({
   handleToggleFavorite,
   pieces,
@@ -6,7 +8,8 @@ export default function FavoriteButton({
   return (
     <>
       {artPiecesInfo.includes(pieces.slug) ? (
-        <button
+
+        <StyledNButton
           data-testid="favorite-button"
           onClick={(e) => {
             e.preventDefault();
@@ -14,9 +17,10 @@ export default function FavoriteButton({
           }}
         >
           💖
-        </button>
+        </StyledNButton>
       ) : (
-        <button
+
+        <StyledNButton
           data-testid="favorite-button"
           onClick={(e) => {
             e.preventDefault();
@@ -24,8 +28,13 @@ export default function FavoriteButton({
           }}
         >
           🖤
-        </button>
+        </StyledNButton>
       )}
     </>
   );
 }
+const StyledNButton = styled.button`
+  border-radius: 20%;
+  border: 1px solid gray;
+  padding: 0.6rem 0.7rem;
+`;
