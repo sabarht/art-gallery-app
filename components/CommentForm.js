@@ -36,8 +36,10 @@ export default function CommentForm({ slug }) {
     event.target.reset();
   }
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <div>
+
+    <form onSubmit={handleSubmit}>
+      <div data-testid="comment-container">
+
         <label htmlFor="comment">Your comment: </label>
         <textarea id="comment" name="comment" rows="4" cols="40"></textarea>
       </div>

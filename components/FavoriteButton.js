@@ -8,7 +8,9 @@ export default function FavoriteButton({
   return (
     <>
       {artPiecesInfo.includes(pieces.slug) ? (
+
         <StyledNButton
+          data-testid="favorite-button"
           onClick={(e) => {
             e.preventDefault();
             handleToggleFavorite(pieces.slug);
@@ -17,7 +19,9 @@ export default function FavoriteButton({
           💖
         </StyledNButton>
       ) : (
+
         <StyledNButton
+          data-testid="favorite-button"
           onClick={(e) => {
             e.preventDefault();
             handleToggleFavorite(pieces.slug);
