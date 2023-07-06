@@ -41,13 +41,14 @@ export default function ArtPieceDetails({
         </div>
       </StyledArticle>
       <Link href="/art_pieces" className="back">
-        Go back to all pieces
+        ⇽ back to all pieces
       </Link>
     </>
   );
 }
 
 const StyledArticle = styled.article`
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;

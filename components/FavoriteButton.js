@@ -8,7 +8,6 @@ export default function FavoriteButton({
   return (
     <>
       {artPiecesInfo.includes(pieces.slug) ? (
-
         <StyledNButton
           data-testid="favorite-button"
           onClick={(e) => {
@@ -19,7 +18,6 @@ export default function FavoriteButton({
           💖
         </StyledNButton>
       ) : (
-
         <StyledNButton
           data-testid="favorite-button"
           onClick={(e) => {
@@ -37,4 +35,8 @@ const StyledNButton = styled.button`
   border-radius: 20%;
   border: 1px solid gray;
   padding: 0.6rem 0.7rem;
+  &:hover {
+    color: white;
+    background-color: lightpink;
+  }
 `;

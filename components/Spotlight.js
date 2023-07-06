@@ -7,7 +7,7 @@ export default function Spotlight({
   handleToggleFavorite,
 }) {
   const getRandomArtPiece = () => {
-    const randomIndex = Math.floor(Math.random() * pieces.length - 1);
+    const randomIndex = Math.floor(Math.random() * pieces.length);
     return pieces[randomIndex];
   };
 
@@ -25,9 +25,7 @@ export default function Spotlight({
 }
 
 const StyledADiv = styled.div`
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
   text-align: center;
-  justify-content: space-around;
-  align-items: center;
+  padding: 3rem;
 `;

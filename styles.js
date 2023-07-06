@@ -15,7 +15,7 @@ export default createGlobalStyle`
     background-color: #F0F4F7;
   }
   a {
-
+    text-decoration:none
   }
   h1{
     text-align: center;
@@ -30,6 +30,12 @@ export default createGlobalStyle`
     flex-direction :column;
     align-items:center;
     gap: 1.5rem;
+    margin: 2rem;
+  }
+  img{
+    border-radius: 2%;
+    box-shadow: 5px 6px 30px 7px rgba(105,102,102,0.46);
+
   }
   .back{
 
