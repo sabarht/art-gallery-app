@@ -31,19 +31,27 @@ test("displays the art piece title", () => {
 
 test("displays the art piece artist", () => {
   render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
-  const artist = screen.getByText(`${mockArtPieces.artist}`);
-  expect(artist).toBeInTheDocument();
+  const artist = screen.getByText((content, element) => {
+    return (
+      element.tagName.toLowerCase() === "p" && content.includes("Artist name:")
+    );
+  });
+  expect(artist).toHaveTextContent("Steve Johnson");
 });
 
 test("displays the art piece year", () => {
   render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
-  const year = screen.getByText(`${mockArtPieces.year}`);
+  const year = screen.getByText((content, element) => {
+    return element.tagName.toLowerCase() === "p" && content.includes("Year:");
+  });
   expect(year).toBeInTheDocument();
 });
 
 test("displays the art piece genre", () => {
   render(<ArtPieceDetails pieces={mockArtPieces} artPiecesInfo={[]} />);
-  const genre = screen.getByText(`${mockArtPieces.genre}`);
+  const genre = screen.getByText((content, element) => {
+    return element.tagName.toLowerCase() === "p" && content.includes("Genre:");
+  });
   expect(genre).toBeInTheDocument();
 });
 

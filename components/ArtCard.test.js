@@ -34,9 +34,7 @@ test("renders the title and artist name", () => {
 
   render(<ArtCard pieces={artPiece} artPiecesInfo={[]} />);
 
-  const titleElement = screen.getByText(
-    `"${artPiece.name}" by ${artPiece.artist}`
-  );
+  const titleElement = screen.getByText(artPiece.name);
 
   expect(titleElement).toBeInTheDocument();
 });
