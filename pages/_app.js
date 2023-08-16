@@ -40,6 +40,7 @@ export default function App({ Component, pageProps }) {
     }
     console.log("isFavorite", isFavorite);
   }
+
   return (
     <>
       <GlobalStyle />
